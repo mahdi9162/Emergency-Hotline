@@ -201,8 +201,14 @@
   .w-20 {
     width: calc(var(--spacing) * 20);
   }
+  .max-w-\[1px\] {
+    max-width: 1px;
+  }
   .max-w-\[1800px\] {
     max-width: 1800px;
+  }
+  .max-w-\[1920px\] {
+    max-width: 1920px;
   }
   .border-collapse {
     border-collapse: collapse;
