@@ -7,14 +7,19 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-800: oklch(44.4% 0.177 26.899);
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --font-weight-black: 900;
-    --radius-2xl: 1rem;
     --radius-3xl: 1.5rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
@@ -187,29 +192,14 @@
   .table {
     display: table;
   }
-  .min-h-100 {
-    min-height: calc(var(--spacing) * 100);
-  }
-  .min-h-\[100vh\] {
-    min-height: 100vh;
-  }
   .w-4 {
     width: calc(var(--spacing) * 4);
-  }
-  .w-6 {
-    width: calc(var(--spacing) * 6);
-  }
-  .w-7 {
-    width: calc(var(--spacing) * 7);
   }
   .w-8 {
     width: calc(var(--spacing) * 8);
   }
-  .w-10 {
-    width: calc(var(--spacing) * 10);
-  }
-  .w-14 {
-    width: calc(var(--spacing) * 14);
+  .w-20 {
+    width: calc(var(--spacing) * 20);
   }
   .max-w-\[1800px\] {
     max-width: 1800px;
@@ -229,17 +219,8 @@
   .justify-center {
     justify-content: center;
   }
-  .gap-1 {
-    gap: calc(var(--spacing) * 1);
-  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
-  }
-  .gap-5 {
-    gap: calc(var(--spacing) * 5);
-  }
-  .rounded-2xl {
-    border-radius: var(--radius-2xl);
   }
   .rounded-3xl {
     border-radius: var(--radius-3xl);
@@ -248,15 +229,8 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .border-2 {
-    border-style: var(--tw-border-style);
-    border-width: 2px;
-  }
   .bg-\[\#00A63E\] {
     background-color: #00A63E;
-  }
-  .bg-\[\#41FF6B10\] {
-    background-color: #41FF6B10;
   }
   .bg-\[\#41FF6B20\] {
     background-color: #41FF6B20;
@@ -264,23 +238,11 @@
   .bg-\[\#F5FFF6\] {
     background-color: #F5FFF6;
   }
-  .bg-\[\#F5FFF\] {
-    background-color: #F5FFF;
-  }
-  .bg-\[\#F5\] {
-    background-color: #F5;
-  }
   .bg-\[\#FFFFFF\] {
     background-color: #FFFFFF;
   }
-  .bg-\[\#F\] {
-    background-color: #F;
-  }
-  .bg-\[\#\] {
-    background-color: #;
-  }
-  .p-6 {
-    padding: calc(var(--spacing) * 6);
+  .bg-\[linear-gradient\(90deg\,rgba\(1\,50\,35\,1\)_0\%\,rgba\(0\,103\,71\,1\)_50\%\,rgba\(1\,50\,35\,1\)_100\%\)\] {
+    background-image: linear-gradient(90deg,rgba(1,50,35,1) 0%,rgba(0,103,71,1) 50%,rgba(1,50,35,1) 100%);
   }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
@@ -288,33 +250,45 @@
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
   }
-  .px-3\.5 {
-    padding-inline: calc(var(--spacing) * 3.5);
-  }
-  .px-5 {
-    padding-inline: calc(var(--spacing) * 5);
-  }
-  .px-6 {
-    padding-inline: calc(var(--spacing) * 6);
-  }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
+  }
+  .py-2\.5 {
+    padding-block: calc(var(--spacing) * 2.5);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
+  }
+  .py-5 {
+    padding-block: calc(var(--spacing) * 5);
   }
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
   }
-  .pt-6 {
-    padding-top: calc(var(--spacing) * 6);
+  .text-center {
+    text-align: center;
   }
-  .pl-2 {
-    padding-left: calc(var(--spacing) * 2);
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
   }
   .text-sm {
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
   }
-  .text-\[20px\] {
-    font-size: 20px;
+  .text-\[40px\] {
+    font-size: 40px;
   }
   .font-black {
     --tw-font-weight: var(--font-weight-black);
@@ -323,6 +297,10 @@
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
   }
   .text-white {
     color: var(--color-white);
@@ -334,15 +312,14 @@
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
-  .sm\:text-sm {
+  .sm\:p-2 {
     @media (width >= 40rem) {
-      font-size: var(--text-sm);
-      line-height: var(--tw-leading, var(--text-sm--line-height));
+      padding: calc(var(--spacing) * 2);
     }
   }
-  .md\:ml-2\.5 {
-    @media (width >= 48rem) {
-      margin-left: calc(var(--spacing) * 2.5);
+  .sm\:px-2 {
+    @media (width >= 40rem) {
+      padding-inline: calc(var(--spacing) * 2);
     }
   }
   .md\:w-6 {
@@ -360,6 +337,11 @@
       gap: calc(var(--spacing) * 5);
     }
   }
+  .md\:px-0 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 0);
+    }
+  }
   .md\:px-5 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 5);
@@ -370,9 +352,10 @@
       padding-inline: calc(var(--spacing) * 6);
     }
   }
-  .md\:py-2 {
+  .md\:text-lg {
     @media (width >= 48rem) {
-      padding-block: calc(var(--spacing) * 2);
+      font-size: var(--text-lg);
+      line-height: var(--tw-leading, var(--text-lg--line-height));
     }
   }
   .md\:text-\[16px\] {
@@ -385,11 +368,14 @@
       font-size: 20px;
     }
   }
-  .md\:text-\[16\] {
+  .md\:text-\[40px\] {
     @media (width >= 48rem) {
-      color: 16;
+      font-size: 40px;
     }
   }
+}
+.hind-madurai {
+  font-family: "Hind Madurai", sans-serif;
 }
 @property --tw-border-style {
   syntax: "*";
