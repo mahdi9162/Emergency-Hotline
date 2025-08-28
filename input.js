@@ -24,6 +24,18 @@ cardContainer.addEventListener('click', function (e) {
       e.target.classList.remove('text-red-500');
     }
   }
+  const callButton = e.target.closest('.call-btn');
+  if (callButton) {
+    const serviceName = callButton.parentNode.parentNode.children[1].children[1].textContent;
+    const serviceNumber = callButton.parentNode.parentNode.children[2].children[0].textContent;
+
+    const coinCounter = Number(getElement('coin-counter').textContent);
+    if (coinCounter >= 20) {
+      getElement('coin-counter').textContent = coinCounter - 20;
+    } else {
+      alert('⚠️ Insufficient balance. A minimum of 20 coins is needed to place a call.');
+      return;
+    }
+    alert(`📞 Calling ${serviceName} Service ${serviceNumber}...`);
+  }
 });
-
-
