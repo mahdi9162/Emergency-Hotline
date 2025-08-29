@@ -29,6 +29,7 @@ cardContainer.addEventListener('click', function (e) {
   if (callButton) {
     const serviceName = callButton.parentNode.parentNode.children[1].children[1].textContent;
     const serviceNumber = callButton.parentNode.parentNode.children[2].children[0].textContent;
+    const serviceSurName = callButton.parentNode.parentNode.children[1].children[0].textContent;
 
     const coinCounter = Number(getElement('coin-counter').textContent);
     if (coinCounter >= 20) {
@@ -38,7 +39,28 @@ cardContainer.addEventListener('click', function (e) {
       return;
     }
     alert(`📞 Calling ${serviceName} Service ${serviceNumber}...`);
+
+    // Call Histoy
+    const localTime = new Date().toLocaleTimeString();
+    const callHistory = getElement('call-history');
+    const newDiv = document.createElement('div');
+    newDiv.innerHTML = `
+                <div class="bg-[#FAFAFA] p-3.5 flex items-center justify-between rounded-lg">
+              <div>
+                <p class="text-lg font-semibold">${serviceSurName}</p>
+                <p class="text-gray-600">${serviceNumber}</p>
+              </div>
+              <div>
+                <p class="font-medium text-[#5c5c5c]">${localTime}</p>
+              </div>
+            </div>`;
+    callHistory.prepend(newDiv);
   }
+  // Clear Button Of Call History
+  const clearButton = getElement('clear-btn');
+  clearButton.addEventListener('click', function () {
+    getElement('call-history').textContent = '';
+  });
 
   //   Copy Button Functionalities
   const copyButton = e.target.closest('.copy-btn');
@@ -50,5 +72,7 @@ cardContainer.addEventListener('click', function (e) {
         copyButton.innerHTML = '<i class="fa-solid fa-copy"></i> Copy';
       }, 2000);
     });
+    const copyCounter = Number(getElement('copy-counter').innerText);
+    getElement('copy-counter').innerText = copyCounter + 1;
   }
 });
