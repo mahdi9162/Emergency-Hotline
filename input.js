@@ -70,9 +70,10 @@ cardContainer.addEventListener('click', function (e) {
       copyButton.textContent = 'Copied';
       setTimeout(function () {
         copyButton.innerHTML = '<i class="fa-solid fa-copy"></i> Copy';
-      }, 2000);
+      }, 500);
     });
     const copyCounter = Number(getElement('copy-counter').innerText);
     getElement('copy-counter').innerText = copyCounter + 1;
+    alert(`${serviceNumber} has been copied.`);
   }
 });
