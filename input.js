@@ -24,6 +24,7 @@ cardContainer.addEventListener('click', function (e) {
       e.target.classList.remove('text-red-500');
     }
   }
+  //   Call Button Functionalities
   const callButton = e.target.closest('.call-btn');
   if (callButton) {
     const serviceName = callButton.parentNode.parentNode.children[1].children[1].textContent;
@@ -37,5 +38,17 @@ cardContainer.addEventListener('click', function (e) {
       return;
     }
     alert(`📞 Calling ${serviceName} Service ${serviceNumber}...`);
+  }
+
+  //   Copy Button Functionalities
+  const copyButton = e.target.closest('.copy-btn');
+  if (copyButton) {
+    const serviceNumber = copyButton.parentNode.parentNode.children[2].children[0].textContent;
+    navigator.clipboard.writeText(serviceNumber).then(function () {
+      copyButton.textContent = 'Copied';
+      setTimeout(function () {
+        copyButton.innerHTML = '<i class="fa-solid fa-copy"></i> Copy';
+      }, 2000);
+    });
   }
 });
